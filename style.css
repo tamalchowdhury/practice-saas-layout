@@ -1,0 +1,98 @@
+/* import inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --accent-color: #8B93FF;
+  --accent-color-light: #C9CCF3;
+  --border-color: #ddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* reset body  */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+  "header header"
+    "sidebar main";
+}
+
+.header {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px;
+  grid-area: header;
+
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  margin-left: auto;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #fff;
+  padding: 10px;
+  border-right: 1px solid var(--border-color);
+}
+
+.link {
+  display: block;
+  padding: 7px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s ease;
+}
+
+.link.active {
+  background-color: var(--accent-color-light);
+}
+
+.link:hover {
+  background-color: var(--accent-color-light);
+}
+
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+    "title title"
+    "filter search";
+}
+
+.section-title {
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px;
+  grid-area: title;
+}
+
+.section-title h2 {
+  font-size: 1rem;
+}
+
+.filter {
+  grid-area: filter;
+  padding: 20px;
+  border-right: 1px solid var(--border-color);
+
+}
+
+.search-results {
+  grid-area: search;
+}
